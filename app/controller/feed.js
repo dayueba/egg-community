@@ -78,6 +78,7 @@ class FeedController extends Controller {
     for (const feed_id of feed_ids) {
       const feed = await ctx.model.Feed.findByPk(feed_id);
       feeds.push({
+        title: feed.title,
         content: feed.content,
         pubtime: ctx.helper.relativeTime(dayjs(feed.created_at).unix()),
       });

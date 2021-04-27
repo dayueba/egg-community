@@ -31,3 +31,8 @@ $ npm stop
 
 
 [egg]: https://eggjs.org
+
+
+## 项目特点
+- 使用大量redis特性，如排行榜功能使用sorted set实现，用户签到记录使用bitmap实现，地理位置使用GEO实现，点击量使用HyperLogLog实现
+

@@ -131,6 +131,36 @@ class FollowController extends Controller {
       },
     });
   }
+
+  async common_follows() {
+    const { ctx, app } = this;
+    const user_id = ctx.state.user.id;
+
+    const user_ids = await app.redis.sinter(`Follow:${user_id}`, `Follow:${ctx.params.id}`);
+
+    const users = [];
+    for (const userId of user_ids) {
+      const user = await ctx.model.User.findByPk(userId);
+      users.push({
+        username: user.username,
+      });
+    }
+
+    ctx.response.success({
+      data: {
+        users,
+      },
+    });
+  }
+
+  async common_followers() {
+    const { ctx } = this;
+    ctx.response.success({
+      data: {
+        //
+      },
+    });
+  }
 }
 
 module.exports = FollowController;

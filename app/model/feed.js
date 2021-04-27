@@ -13,6 +13,10 @@ module.exports = app => {
       type: STRING(255),
       allowNull: false,
     },
+    title: {
+      type: STRING(100),
+      allowNull: false,
+    },
     created_at: DATE,
     updated_at: DATE,
   });
