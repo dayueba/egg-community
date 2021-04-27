@@ -54,6 +54,10 @@ module.exports = appInfo => {
     port: 3306,
     password: '123456',
     database: 'community',
+    define: {
+      timestamps: false,
+      freezeTableName: true,
+    },
   };
 
   config.security = {

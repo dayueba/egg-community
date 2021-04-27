@@ -12,6 +12,17 @@ module.exports = app => {
   router.post('/login', controller.auth.login);
   router.get('/authCode', controller.auth.getAuthCode);
 
-  // auth
+  // user
   router.resources('users', '/users', controller.users);
+
+  // follow
+  router.post('/follow/:id', app.jwt, controller.follow.create);
+  router.delete('/follow/:id', app.jwt, controller.follow.destroy);
+  // router.get('/followers', app.jwt, controller.follow.followers);
+  router.get('/follows', app.jwt, controller.follow.follows);
+
+  // feed
+  router.post('/feeds', app.jwt, controller.feed.create);
+  router.delete('/feeds/:id', app.jwt, controller.feed.destroy);
+  router.get('/feeds', app.jwt, controller.feed.index);
 };
