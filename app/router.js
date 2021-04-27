@@ -27,4 +27,8 @@ module.exports = app => {
   router.post('/feeds', app.jwt, controller.feed.create);
   router.delete('/feeds/:id', app.jwt, controller.feed.destroy);
   router.get('/feeds', app.jwt, controller.feed.index);
+
+  // sign
+  router.post('/sign', app.jwt, controller.sign.sign);
+
 };
