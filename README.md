@@ -32,7 +32,13 @@ $ npm stop
 
 [egg]: https://eggjs.org
 
+[awesome-egg]: https://github.com/eggjs/awesome-egg
+
 
 ## 项目特点
 - 使用大量redis特性，如排行榜功能使用sorted set实现，用户签到记录使用bitmap实现，地理位置使用GEO实现，点击量使用HyperLogLog实现
 
+## TODO
+- [] 接入es 做feed搜索模块 https://github.com/brucewar/egg-elasticsearch
+- [] refresh token
+- [] redis从单机版升级成集群 https://www.npmjs.com/package/egg-redis

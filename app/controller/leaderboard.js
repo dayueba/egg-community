@@ -4,8 +4,8 @@ const Controller = require('egg').Controller;
 
 const dayjs = require('dayjs');
 
-class SignController extends Controller {
-  async sign() {
+class LeaderboardController extends Controller {
+  async index() {
     const { ctx, app } = this;
     const user_id = ctx.state.user.id;
     ctx.validate({
@@ -57,4 +57,4 @@ class SignController extends Controller {
   }
 }
 
-module.exports = SignController;
+module.exports = LeaderboardController;
